@@ -1,7 +1,7 @@
 '''
 archivo_calificaciones tiene las siguientes columnas:
 	nombre	                  correo	          sum_exam sum_tareas	total	extra_final
-0	Juan Charrasqueado    	  fulano@gmail.com	  57.495	 40	        97.495	0.0
+	Juan Charrasqueado    	  fulano@gmail.com	  57.495	 40	97.495	0.0
 
 Que son usadas en el ciclo for más abajo
 '''
