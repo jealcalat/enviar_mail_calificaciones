@@ -1,7 +1,7 @@
 '''
 archivo_calificaciones tiene las siguientes columnas:
-	nombre	                    correo	            sum_exam sum_tareas	total	extra_final
-0	Aquilez Baeza Parada    	  fulano@gmail.com	  57.495	 40	        97.495	0.0
+	nombre	                  correo	          sum_exam sum_tareas	total	extra_final
+0	Juan Charrasqueado    	  fulano@gmail.com	  57.495	 40	        97.495	0.0
 
 Que son usadas en el ciclo for más abajo
 '''
@@ -64,17 +64,18 @@ for i in len(archivo_calificaciones.index):
     INICIO = f'Hola {alumno}:'
     TEXT = '''\
         Calificaciones desglosadas
-        ==================================
-        Tareas:                   {tareas}.
-        Exámenes:               {examenes}.
+        ==========================
+        Tareas:{e1} {tareas}.
+        Exámenes:{e2} {examenes}.
         Extra (reseña de libro): {extra_re}
-        ==================================
-        Total: {TOTAL}
-    '''
-    FINAL = "\nNo contestes a este correo. Se envió de forma automatizada."
-    FROM = "my_email@gmail.com"
-    TO = "correo_alumno@dominio.com"
-
+        ==========================
+        Total:{e3} {TOTAL}
+    '''.format(tareas=tareas, examenes=examenes, extra_re=extra_re, TOTAL=total + extra_re, e1="."*32, e2="."*24, e3="."*34)
+    FINAL = "\n->No contestes a este correo. Se envió de forma automatizada.<-\n\nEmmanuel Alcalá\nDudas en: {}".format("jaime.alcala@iteso.mx")
+    FROM = "jealcalat@gmail.com"
+    TO = "jaime.alcala@iteso.mx" #archivo_calificaciones['correo'][i] #
+    from_to = [FROM, TO]
     # Preparar mensaje
     message = '{}\n\n{}\n{}'.format(INICIO, TEXT, FINAL)
     enviar_mail(from_to, SUBJECT, message)
+    print(f'Correo enviado a {from_to[1]}, {alumno}, calificacion: {calificacion}')
