@@ -72,8 +72,8 @@ for i in len(archivo_calificaciones.index):
         Total: {TOTAL}
     '''
     FINAL = "\nNo contestes a este correo. Se envió de forma automatizada."
-    FROM = "jealcalat@gmail.com"
-    TO = "jaime.alcala@iteso.mx"
+    FROM = "my_email@gmail.com"
+    TO = "correo_alumno@dominio.com"
 
     # Preparar mensaje
     message = '{}\n\n{}\n{}'.format(INICIO, TEXT, FINAL)
