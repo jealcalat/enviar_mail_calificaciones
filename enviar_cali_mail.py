@@ -73,7 +73,8 @@ for i in len(archivo_calificaciones.index):
     '''.format(tareas=tareas, examenes=examenes, extra_re=extra_re, TOTAL=total + extra_re, e1="."*32, e2="."*24, e3="."*34)
     FINAL = "\n->No contestes a este correo. Se envió de forma automatizada.<-\n\nEmmanuel Alcalá\nDudas en: {}".format("jaime.alcala@iteso.mx")
     FROM = "jealcalat@gmail.com"
-    TO = "jaime.alcala@iteso.mx" #archivo_calificaciones['correo'][i] #
+    # TO cambiará de acuerdo a la columna con el correo del alumno archivo_calificaciones['correo'][i]
+    TO = "jaime.alcala@iteso.mx"
     from_to = [FROM, TO]
     # Preparar mensaje
     message = '{}\n\n{}\n{}'.format(INICIO, TEXT, FINAL)
